@@ -77,3 +77,18 @@ int* GetIntArrSame(int num)
 
     return arr;
 }
+
+bool IsIncrease(int* arr, int num)
+{
+    for (int i = 0; i < num - 1; ++i)
+    {
+        if (arr[i] > arr[i + 1])
+        {
+            printf("false \n");
+            return false;
+        }
+    }
+
+    printf("true \n");
+    return true;
+}

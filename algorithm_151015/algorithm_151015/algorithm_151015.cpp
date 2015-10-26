@@ -34,6 +34,8 @@ int _tmain(int argc, _TCHAR* argv[])
     printf("- after : ");
     InsertionSort(nullArr, 0);
     PrintIntArr(nullArr, 0);
+    printf("- IsCorrect : ");
+    IsIncrease(nullArr, 0);
     printf("\n");
 
     printf("element 1\n");
@@ -43,6 +45,8 @@ int _tmain(int argc, _TCHAR* argv[])
     printf("- after : ");
     InsertionSort(one, 1);
     PrintIntArr(one, 1);
+    printf("- IsCorrect : ");
+    IsIncrease(one, 1);
     printf("\n");
 
     printf("element 2\n");
@@ -52,6 +56,8 @@ int _tmain(int argc, _TCHAR* argv[])
     printf("- after : ");
     InsertionSort(two, 2);
     PrintIntArr(two, 2);
+    printf("- IsCorrect : ");
+    IsIncrease(two, 2);
     printf("\n");
 
     printf("Increse\n");
@@ -61,6 +67,8 @@ int _tmain(int argc, _TCHAR* argv[])
     printf("- after : ");
     InsertionSort(increse, 20);
     PrintIntArr(increse, 20);
+    printf("- IsCorrect : ");
+    IsIncrease(increse, 20);
     printf("\n");
 
     printf("Decrese\n");
@@ -70,6 +78,8 @@ int _tmain(int argc, _TCHAR* argv[])
     printf("- after : ");
     InsertionSort(decrese, 20);
     PrintIntArr(decrese, 20);
+    printf("- IsCorrect : ");
+    IsIncrease(decrese, 20);
     printf("\n");
 
     printf("Random\n");
@@ -79,6 +89,8 @@ int _tmain(int argc, _TCHAR* argv[])
     printf("- after : ");
     InsertionSort(random, 20);
     PrintIntArr(random, 20);
+    printf("- IsCorrect : ");
+    IsIncrease(random, 20);
     printf("\n");
 
     printf("Same\n");
@@ -88,6 +100,8 @@ int _tmain(int argc, _TCHAR* argv[])
     printf("- after : ");
     InsertionSort(same, 20);
     PrintIntArr(same, 20);
+    printf("- IsCorrect : ");
+    IsIncrease(same, 20);
     printf("\n");
 
     getchar();
