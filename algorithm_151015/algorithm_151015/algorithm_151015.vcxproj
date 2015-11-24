@@ -14,12 +14,13 @@
     <ProjectGuid>{168B6CE1-C907-406C-90EC-6C6D94DE4D9B}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>algorithm_151015</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -80,7 +81,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Example.h" />
+    <ClInclude Include="FindMaximumSubArray.h" />
     <ClInclude Include="InsertionSort.h" />
+    <ClInclude Include="MergeSort.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>

@@ -30,6 +30,12 @@
     <ClInclude Include="Example.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
+    <ClInclude Include="MergeSort.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="FindMaximumSubArray.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

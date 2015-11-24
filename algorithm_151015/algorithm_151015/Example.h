@@ -49,10 +49,12 @@ int* GetIntArrRandom(int num)
 
     int* arr = new int[num];
     srand((unsigned int)time(NULL));
-    
+
+	int ranNum = num*num;
+
     for (int i = 0; i < num; ++i)
     {
-        arr[i] = rand() % (num*num);
+        arr[i] = (rand() % ranNum) - ranNum/2;
     }
 
     return arr;
