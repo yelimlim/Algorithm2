@@ -2,32 +2,13 @@
 //
 
 #include "stdafx.h"
+#include "Struct.h"
 #include "Example.h"
 #include "InsertionSort.h"
 #include "MergeSort.h"
 #include "FindMaximumSubArray.h"
-
-void PrintIntArr(int* arr, int s, int e)
-{
-	if (arr == nullptr)
-	{
-		printf("null");
-		printf("\n");
-		return;
-	}
-
-	for (int i = s; i <= e; ++i)
-	{
-		printf("%d ", arr[i]);
-	}
-
-	printf("\n");
-}
-
-void PrintIntArr(int* arr, int num)
-{
-	PrintIntArr(arr, 0, num - 1);
-}
+#include "windows.h"
+#include "HeapSort.h"
 
 void InsertionSortExample()
 {
@@ -195,49 +176,49 @@ void MergeSortExample()
 	printf("\n");
 }
 
-int _tmain(int argc, _TCHAR* argv[])
+void MaximumSubArray()
 {
-    //MergeSort
-    printf("<MaximumSubArray>\n");
+	//MaximumSubArray
+	printf("<MaximumSubArray>\n");
 
-    printf("element 0\n");
-    int* nullArr = GetIntArrRandom(0);
-    printf("- array : ");
-    PrintIntArr(nullArr, 0);
-    Info* nullInfo = FindMaximumSubArrayN2(nullArr, 0);
+	printf("element 0\n");
+	int* nullArr = GetIntArrRandom(0);
+	printf("- array : ");
+	PrintIntArr(nullArr, 0);
+	Info* nullInfo = FindMaximumSubArrayN2(nullArr, 0);
 	printf("- n^2 result : ");
-    PrintIntArr(nullArr, nullInfo->s, nullInfo->e);
+	PrintIntArr(nullArr, nullInfo->s, nullInfo->e);
 	delete nullInfo;
 	nullInfo = FindMaximumSubArrayDivide(nullArr, 0, 0);
 	printf("- divide result : ");
 	PrintIntArr(nullArr, nullInfo->s, nullInfo->e);
-    printf("\n");
+	printf("\n");
 
-    printf("element 1\n");
-    int* one = GetIntArrRandom(1);
+	printf("element 1\n");
+	int* one = GetIntArrRandom(1);
 	printf("- array : ");
-    PrintIntArr(one, 1);
+	PrintIntArr(one, 1);
 	printf("- n^2 result : ");
 	Info* oneInfo = FindMaximumSubArrayN2(one, 1);
-    PrintIntArr(one, oneInfo->s, oneInfo->e);
+	PrintIntArr(one, oneInfo->s, oneInfo->e);
 	delete oneInfo;
 	oneInfo = FindMaximumSubArrayDivide(one, 0, 0);
 	printf("- divide result : ");
 	PrintIntArr(one, oneInfo->s, oneInfo->e);
-    printf("\n");
+	printf("\n");
 
-    printf("element 2\n");
-    int* two = GetIntArrRandom(2);
-    printf("- array : ");
-    PrintIntArr(two, 2);
+	printf("element 2\n");
+	int* two = GetIntArrRandom(2);
+	printf("- array : ");
+	PrintIntArr(two, 2);
 	Info* twoInfo = FindMaximumSubArrayN2(two, 2);
 	printf("- n^2 result : ");
-    PrintIntArr(two, twoInfo->s, twoInfo->e);
+	PrintIntArr(two, twoInfo->s, twoInfo->e);
 	delete twoInfo;
 	twoInfo = FindMaximumSubArrayDivide(two, 0, 1);
 	printf("- divide result : ");
 	PrintIntArr(two, twoInfo->s, twoInfo->e);
-    printf("\n");
+	printf("\n");
 
 	printf("element 4\n");
 	int* four = GetIntArrRandom(4);
@@ -252,19 +233,38 @@ int _tmain(int argc, _TCHAR* argv[])
 	PrintIntArr(four, fourInfo->s, fourInfo->e);
 	printf("\n");
 
-    printf("Random\n");
-    int* random = GetIntArrRandom(20);
-    printf("- array : ");
-    PrintIntArr(random, 20);
+	printf("Random\n");
+	int* random = GetIntArrRandom(20);
+	printf("- array : ");
+	PrintIntArr(random, 20);
 	Info* randomInfo = FindMaximumSubArrayN2(random, 20);
 	printf("- n^2 result : ");
-    PrintIntArr(random, randomInfo->s, randomInfo->e);
+	PrintIntArr(random, randomInfo->s, randomInfo->e);
 	delete randomInfo;
 	randomInfo = FindMaximumSubArrayDivide(random, 0, 19);
 	printf("- divide result : ");
 	PrintIntArr(random, randomInfo->s, randomInfo->e);
 
-    printf("\n");
+	printf("\n");
+}
+
+using namespace System;
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	Console::SetWindowSize(Console::WindowWidth * 2, Console::WindowHeight);
+	
+	printf("<HeapSort>\n");
+	
+	printf("- before\n");
+	int* arr = GetIntArrRandom(20);
+	Heap* heap = MakeHeap(arr, 20);
+	PrintHeap(heap);
+
+	printf("- after\n");
+	HeapSort(arr, 20);
+	Heap* heap2 = MakeHeap(arr, 20);
+	PrintHeap(heap2);
 
     getchar();
 }
