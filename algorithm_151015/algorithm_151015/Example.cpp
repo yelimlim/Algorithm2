@@ -100,6 +100,46 @@ bool IsIncrease(int* arr, int num)
 	return true;
 }
 
+bool IsMax(int* arr, int start, int end, int value)
+{
+	if (arr == nullptr)
+	{
+		return false;
+	}
+
+	for (int i = start; i <= end; ++i)
+	{
+		if (arr[i] > value)
+		{
+			printf("false \n");
+			return false;
+		}
+	}
+
+	printf("true \n");
+	return true;
+}
+
+bool IsMin(int* arr, int start, int end, int value)
+{
+	if (arr == nullptr)
+	{
+		return false;
+	}
+
+	for (int i = start; i <= end; ++i)
+	{
+		if (arr[i] < value)
+		{
+			printf("false \n");
+			return false;
+		}
+	}
+
+	printf("true \n");
+	return true;
+}
+
 Heap* MakeSampleHeap(int num)
 {
 	int* arr = GetIntArrRandom(num + 1);

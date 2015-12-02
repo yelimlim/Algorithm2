@@ -8,6 +8,10 @@ int* GetIntArrSame(int num);
 
 bool IsIncrease(int* arr, int num);
 
+bool IsMax(int* arr, int start, int end, int value);
+
+bool IsMin(int* arr, int start, int end, int value);
+
 Heap* MakeSampleHeap(int num);
 
 Heap* MakeHeap(int* arr, int size);

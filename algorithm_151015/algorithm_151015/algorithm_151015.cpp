@@ -9,6 +9,7 @@
 #include "FindMaximumSubArray.h"
 #include "windows.h"
 #include "HeapSort.h"
+#include "QuickSort.h"
 
 void InsertionSortExample()
 {
@@ -248,14 +249,12 @@ void MaximumSubArray()
 	printf("\n");
 }
 
-using namespace System;
-
-int _tmain(int argc, _TCHAR* argv[])
+void HeapSort()
 {
-	Console::SetWindowSize(Console::WindowWidth * 2, Console::WindowHeight);
-	
+	//Console::SetWindowSize(Console::WindowWidth * 2, Console::WindowHeight);
+
 	printf("<HeapSort>\n");
-	
+
 	printf("- before\n");
 	int* arr = GetIntArrRandom(20);
 	Heap* heap = MakeHeap(arr, 20);
@@ -265,6 +264,95 @@ int _tmain(int argc, _TCHAR* argv[])
 	HeapSort(arr, 20);
 	Heap* heap2 = MakeHeap(arr, 20);
 	PrintHeap(heap2);
+}
+
+using namespace System;
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	printf("<Partition>\n");
+	printf("\n");
+
+	for (int i = 1; i <= 32; ++i)
+	{
+		printf("element %d\n", i);
+		int* arr = GetIntArrRandom(i);
+		printf("- before : ");
+		PrintIntArr(arr, i);
+		int pivot = Partition(arr, 0, i - 1);
+		printf("- after : ");
+		PrintIntArr(arr, i);
+		printf("- isLeftMax : ");
+		IsMax(arr, 0, pivot - 1, arr[pivot]);
+		printf("- isRightMin : ");
+		IsMin(arr, pivot + 1, i - 1, arr[pivot]);
+		printf("\n");
+	}
+
+	printf("increse\n");
+	int* increaseArr = GetIntArrIncrese(32);
+	printf("- before : ");
+	PrintIntArr(increaseArr, 32);
+	int increasePivot = Partition(increaseArr, 0, 31);
+	printf("- after : ");
+	PrintIntArr(increaseArr, 32);
+	printf("- isLeftMax : ");
+	IsMax(increaseArr, 0, increasePivot - 1, increaseArr[increasePivot]);
+	printf("- isRightMin : ");
+	IsMin(increaseArr, increasePivot + 1, 31, increaseArr[increasePivot]);
+	printf("\n");
+
+	printf("decrese\n");
+	int* decreaseArr = GetIntArrDecrese(32);
+	printf("- before : ");
+	PrintIntArr(decreaseArr, 32);
+	int decreasePivot = Partition(decreaseArr, 0, 31);
+	printf("- after : ");
+	PrintIntArr(decreaseArr, 32);
+	printf("- isLeftMax : ");
+	IsMax(decreaseArr, 0, decreasePivot - 1, decreaseArr[decreasePivot]);
+	printf("- isRightMin : ");
+	IsMin(decreaseArr, decreasePivot + 1, 31, decreaseArr[decreasePivot]);
+	printf("\n");
+
+	printf("<QuickSort>\n");
+	printf("\n");
+
+	for (int i = 1; i <= 16; ++i)
+	{
+		printf("element %d\n", i);
+		int* arr = GetIntArrRandom(i);
+		printf("- before : ");
+		PrintIntArr(arr, i);
+		QuickSort(arr, 0, i - 1);
+		printf("- after : ");
+		PrintIntArr(arr, i);
+		printf(" - isIncrease : ");
+		IsIncrease(arr, i);
+		printf("\n");
+	}
+
+	printf("increse\n");
+	int* increaseAr2 = GetIntArrIncrese(16);
+	printf("- before : ");
+	PrintIntArr(increaseAr2, 16);
+	QuickSort(increaseAr2, 0, 15);
+	printf("- after : ");
+	PrintIntArr(increaseAr2, 16);
+	printf(" - isIncrease : ");
+	IsIncrease(increaseAr2, 16);
+	printf("\n");
+
+	printf("decrese\n");
+	int* decreaseArr2 = GetIntArrDecrese(16);
+	printf("- before : ");
+	PrintIntArr(decreaseArr2, 16);
+	QuickSort(decreaseArr2, 0, 15);
+	printf("- after : ");
+	PrintIntArr(decreaseArr2, 16);
+	printf(" - isIncrease : ");
+	IsIncrease(decreaseArr2, 16);
+	printf("\n");
 
     getchar();
 }
